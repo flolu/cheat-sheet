@@ -17,6 +17,12 @@ Download `cookies.txt` with the help of [cookies.txt](https://chrome.google.com/
 youtube-dl --cookies=cookies.txt <URL>
 ```
 
+### Download YouTube Video as Best MP4
+
+```
+youtube-dl -f 'bestvideo[ext=mp4]+bestaudio[ext=m4a]/mp4' <URL>
+```
+
 ## Development
 
 ### Clear Docker Resources
