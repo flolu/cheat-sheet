@@ -2,6 +2,12 @@
 
 ## Media
 
+### Batch compress / resize images
+
+```
+for i in *; do convert $i -resize 2048x $i-compressed; done;
+```
+
 ### Download YouTube Playlist
 
 ```
