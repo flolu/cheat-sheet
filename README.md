@@ -6,7 +6,7 @@
 
 ```
 sudo apt update
-sudo apt install git nodejs npm vlc ffmpegthumbnailer ffmpeg youtube-dl gnome-tweaks
+sudo apt install git nodejs npm vlc ffmpegthumbnailer ffmpeg youtube-dl gnome-tweaks rawtherapee
 sudo snap install chromium kubectl blender code --classic
 
 # for reading sd card
