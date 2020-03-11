@@ -6,8 +6,13 @@
 
 ```
 sudo apt update
-sudo apt install git nodejs npm vlc ffmpegthumbnailer ffmpeg youtube-dl gnome-tweaks rawtherapee
+sudo apt install git nodejs npm vlc ffmpegthumbnailer ffmpeg youtube-dl gnome-tweaks rawtherapee docker-compose python
 sudo snap install chromium kubectl blender code --classic
+
+# configure docker
+sudo groupadd docker
+sudo usermod -aG docker $USER
+# then log out and back in
 
 # for reading sd card
 sudo apt-get install exfat-utils exfat-fuse
