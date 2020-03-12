@@ -6,7 +6,7 @@
 
 ```
 sudo apt update
-sudo apt install git nodejs npm vlc ffmpegthumbnailer ffmpeg youtube-dl gnome-tweaks rawtherapee docker-compose python
+sudo apt install git nodejs npm vlc ffmpegthumbnailer ffmpeg youtube-dl gnome-tweaks rawtherapee docker-compose python python3-pip
 sudo snap install chromium kubectl blender code --classic
 
 # configure docker
@@ -33,6 +33,11 @@ sudo apt install nvidia-driver-435
 # configure git user
 git config --global user.email "fllu@pm.me"
 git config --global user.name "flolu"
+
+# veracrypt
+sudo add-apt-repository ppa:unit193/encryption
+sudo apt update
+sudo apt install veracrypt
 ```
 
 ### Fix mouse issues
