@@ -38,6 +38,11 @@ git config --global user.name "flolu"
 sudo add-apt-repository ppa:unit193/encryption
 sudo apt update
 sudo apt install veracrypt
+
+# obs
+sudo add-apt-repository ppa:obsproject/obs-studio
+sudo apt-get update
+sudo apt-get install obs-studio
 ```
 
 ### Fix mouse issues
