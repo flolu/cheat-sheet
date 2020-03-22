@@ -60,6 +60,14 @@ EndSection
 
 ## 🖼️ Media
 
+### Convert mp4 to gif
+
+```
+ffmpeg -t 3 -i input.mp4 -vf "fps=10,scale=320:-1:flags=lanczos,split[s0][s1];[s0]palettegen[p];[s1][p]paletteuse" -loop 0 output.gif
+```
+
+- -t 3 (3 seconds in length)
+
 ### Batch compress / resize images
 
 ```
