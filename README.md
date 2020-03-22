@@ -109,3 +109,17 @@ docker system prune --volumes
 ```
 docker container stop $(docker container ls -aq)
 ```
+
+## 🤪 Misc
+
+### Print file tree
+
+```
+find | sed 's|[^/]*/|- |g'
+```
+
+### Print folder tree
+
+```
+find . -type d | sed -e "s/[^-][^\/]*\//  |/g" -e "s/|\([^ ]\)/|-\1/"
+```
