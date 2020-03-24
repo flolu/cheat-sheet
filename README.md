@@ -22,6 +22,9 @@ curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
 echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
 sudo apt install yarn
 
+# angular cli
+sudo yarn global add @angular/cli --prefix /usr/local
+
 # ckb-next
 sudo add-apt-repository ppa:tatokis/ckb-next
 sudo apt install ckb-next
