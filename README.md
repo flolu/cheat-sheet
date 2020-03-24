@@ -25,6 +25,9 @@ sudo apt install yarn
 # angular cli
 sudo yarn global add @angular/cli --prefix /usr/local
 
+# bazel buildifier
+sudo yarn global add @bazel/buildifier --prefix /usr/local
+
 # ckb-next
 sudo add-apt-repository ppa:tatokis/ckb-next
 sudo apt install ckb-next
