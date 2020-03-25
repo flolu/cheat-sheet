@@ -27,7 +27,7 @@ sudo yarn global add @angular/cli --prefix /usr/local
 
 # bazel
 sudo yarn global add @bazel/buildifier --prefix /usr/local
-sudo yarn global add @bazel/bazelisk--prefix /usr/local
+sudo yarn global add @bazel/bazelisk --prefix /usr/local
 
 # ckb-next
 sudo add-apt-repository ppa:tatokis/ckb-next
