@@ -6,7 +6,7 @@
 
 ```
 sudo apt update
-sudo apt install git nodejs npm vlc ffmpegthumbnailer ffmpeg youtube-dl gnome-tweaks rawtherapee docker-compose python python3-pip
+sudo apt install git nodejs vlc ffmpegthumbnailer ffmpeg youtube-dl gnome-tweaks rawtherapee docker-compose python python3-pip
 sudo snap install chromium kubectl blender code --classic
 
 # configure docker
@@ -21,6 +21,12 @@ sudo apt-get install exfat-utils exfat-fuse
 curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
 echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
 sudo apt install yarn
+
+# brave browser
+sudo apt install apt-transport-https curl
+curl -s https://brave-browser-apt-release.s3.brave.com/brave-core.asc | sudo apt-key --keyring /etc/apt/trusted.gpg.d/brave-browser-release.gpg add -
+echo "deb [arch=amd64] https://brave-browser-apt-release.s3.brave.com/ stable main" | sudo tee /etc/apt/sources.list.d/brave-browser-release.list
+sudo apt install brave-browser
 
 # angular cli
 sudo yarn global add @angular/cli --prefix /usr/local
