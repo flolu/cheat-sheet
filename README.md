@@ -7,7 +7,7 @@
 ```
 sudo apt update
 sudo apt install git nodejs vlc ffmpegthumbnailer ffmpeg youtube-dl gnome-tweaks rawtherapee docker-compose python python3-pip
-sudo snap install chromium kubectl blender code --classic
+sudo snap install chromium kubectl blender code helm --classic
 
 # configure docker
 sudo groupadd docker
