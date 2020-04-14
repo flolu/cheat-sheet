@@ -4,12 +4,9 @@
 
 ```bash
 sudo apt update && \
-sudo apt install git nodejs vlc curl ffmpegthumbnailer ffmpeg youtube-dl gnome-tweaks rawtherapee docker-compose python python3-pip -y && \
+sudo apt install git nodejs gnome-tweaks docker-compose -y && \
 sudo snap install chromium --classic && \
-sudo snap install code --classic && \
-sudo snap install kubectl --classic && \
-sudo snap install helm --classic && \
-sudo snap install blender --classic
+sudo snap install code --classic
 
 # nvidia driver
 ubuntu-drivers devices | grep recommended
@@ -35,6 +32,11 @@ sudo ./mouse.sh
 ## Secondary installs
 
 ```bash
+sudo apt install git vlc curl ffmpegthumbnailer ffmpeg youtube-dl rawtherapee python python3-pip -y && \
+sudo snap install kubectl --classic && \
+sudo snap install helm --classic && \
+sudo snap install discord --classic
+
 # angular cli
 sudo yarn global add @angular/cli --prefix /usr/local
 
@@ -51,6 +53,9 @@ echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] http://packages.cloud
 curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key --keyring /usr/share/keyrings/cloud.google.gpg add -
 sudo apt-get update && sudo apt-get install google-cloud-sdk
 
+snap install obs-studio --classic
+sudo snap install blender --classic
+
 # ckb-next
 sudo add-apt-repository ppa:tatokis/ckb-next
 sudo apt install ckb-next
@@ -59,11 +64,6 @@ sudo apt install ckb-next
 sudo add-apt-repository ppa:unit193/encryption
 sudo apt update
 sudo apt install veracrypt
-
-# obs
-sudo add-apt-repository ppa:obsproject/obs-studio
-sudo apt-get update
-sudo apt-get install obs-studio
 
 # brave browser
 sudo apt install apt-transport-https curl
