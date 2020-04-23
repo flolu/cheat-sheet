@@ -11,8 +11,7 @@ sudo snap install code --classic
 # configure docker
 sudo groupadd docker && \
 sudo usermod -aG docker $USER && \
-chmod 777 /var/run/docker.sock
-# then log out and back in
+sudo chmod 777 /var/run/docker.sock
 
 # configure git user
 git config --global user.email "fllu@pm.me" && \
