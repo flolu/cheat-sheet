@@ -4,13 +4,15 @@
 
 ```bash
 sudo apt update && \
-sudo apt install git nodejs gnome-tweaks docker-compose -y && \
+sudo apt install curl git gcc docker-compose -y && \
 sudo snap install chromium --classic && \
 sudo snap install code --classic
 
-# nvidia driver
-ubuntu-drivers devices | grep recommended
-sudo apt install nvidia-driver-435
+# configure docker
+sudo groupadd docker && \
+sudo usermod -aG docker $USER && \
+chmod 777 /var/run/docker.sock
+# then log out and back in
 
 # configure git user
 git config --global user.email "fllu@pm.me" && \
@@ -19,14 +21,15 @@ git config --global user.name "flolu"
 # yarn
 curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
 echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
-sudo apt update && sudo apt install yarn
+sudo apt update && sudo apt install yarn -y
 
 # bazel
 sudo yarn global add @bazel/buildifier --prefix /usr/local && \
 sudo yarn global add @bazel/bazelisk --prefix /usr/local
 
-# fix mouse issue
-sudo ./mouse.sh
+# nvidia driver
+ubuntu-drivers devices | grep recommended
+sudo apt install nvidia-driver-440
 ```
 
 ## Secondary installs
@@ -39,11 +42,6 @@ sudo snap install discord --classic
 
 # angular cli
 sudo yarn global add @angular/cli --prefix /usr/local
-
-# configure docker
-sudo groupadd docker
-sudo usermod -aG docker $USER
-# then log out and back in
 
 # for reading sd card
 sudo apt-get install exfat-utils exfat-fuse
