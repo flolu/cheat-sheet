@@ -4,7 +4,7 @@
 
 ```bash
 sudo apt update && \
-sudo apt install curl git gcc docker-compose -y && \
+sudo apt install curl git gcc nodejs python docker-compose -y && \
 sudo snap install chromium --classic && \
 sudo snap install code --classic
 
