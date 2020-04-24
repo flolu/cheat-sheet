@@ -69,6 +69,17 @@ sudo apt install apt-transport-https curl
 curl -s https://brave-browser-apt-release.s3.brave.com/brave-core.asc | sudo apt-key --keyring /etc/apt/trusted.gpg.d/brave-browser-release.gpg add -
 echo "deb [arch=amd64] https://brave-browser-apt-release.s3.brave.com/ stable main" | sudo tee /etc/apt/sources.list.d/brave-browser-release.list
 sudo apt install brave-browser
+
+# swipe gestures
+sudo apt-get install git libinput-tools libxdo-dev g++ && \
+git clone https://github.com/Hikari9/comfortable-swipe.git --depth 1 && \
+cd comfortable-swipe && \
+bash install && \
+cd .. && rm -rf comfortable-swipe && \
+sudo gpasswd -a $USER $(ls -l /dev/input/event* | awk '{print $4}' | head --line=1) && \
+sudo reboot
+
+comfortable-swipe autostart
 ```
 
 # 🖼️ Media
