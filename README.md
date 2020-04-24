@@ -10,8 +10,8 @@ sudo snap install code --classic
 
 # configure docker
 sudo groupadd docker && \
-sudo usermod -aG docker $USER && \
-sudo chmod 777 /var/run/docker.sock
+sudo gpasswd -a $USER docker && \
+newgrp docker
 
 # configure git user
 git config --global user.email "fllu@pm.me" && \
