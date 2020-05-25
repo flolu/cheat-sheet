@@ -80,6 +80,9 @@ sudo gpasswd -a $USER $(ls -l /dev/input/event* | awk '{print $4}' | head --line
 sudo reboot
 
 comfortable-swipe autostart
+
+# latex
+sudo apt install texlive-latex-extra
 ```
 
 # 🖼️ Media
