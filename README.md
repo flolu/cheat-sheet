@@ -34,7 +34,7 @@ sudo apt install nvidia-driver-440
 ## Secondary installs
 
 ```bash
-sudo apt install git vlc curl ffmpegthumbnailer ffmpeg youtube-dl rawtherapee python python3-pip -y && \
+sudo apt install git vlc curl ffmpegthumbnailer ffmpeg youtube-dl rawtherapee python python3-pip gnome-tweak-tool -y && \
 sudo snap install kubectl --classic && \
 sudo snap install helm --classic && \
 sudo snap install discord --classic
@@ -83,6 +83,13 @@ comfortable-swipe autostart
 
 # latex
 sudo apt install texlive-latex-extra
+```
+
+## Customization
+
+```
+# two monitor setup
+xrandr --output DVI-I-0 --mode 1920x1080 --pos 0x550 --rotate left --output HDMI-0 --primary --mode 3440x1440 --rate 99.98 --pos 1080x0
 ```
 
 # 🖼️ Media
