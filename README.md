@@ -1,33 +1,37 @@
 # 🐧 Ubuntu
 
 ## Essential installs
+```
+sudo apt purge snapd && \
+sudo apt install snapd
+```
 
 ```bash
 sudo apt update && \
 sudo apt install curl git gcc nodejs python docker-compose -y && \
 sudo snap install chromium --classic && \
-sudo snap install code --classic
+sudo snap install code --classic && \
 
 # configure docker
-sudo groupadd docker && \
+# sudo groupadd docker && \
 sudo gpasswd -a $USER docker && \
-newgrp docker
+newgrp docker && \
 
 # configure git user
-git config --global user.email "fllu@pm.me" && \
-git config --global user.name "flolu"
+git config --global user.email "flo@flolu.com" && \
+git config --global user.name "flolu" && \
 
 # yarn
 curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
 echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
-sudo apt update && sudo apt install yarn -y
+sudo apt update && sudo apt install yarn -y && \
 
 # bazel
 sudo yarn global add @bazel/buildifier --prefix /usr/local && \
-sudo yarn global add @bazel/bazelisk --prefix /usr/local
+sudo yarn global add @bazel/bazelisk --prefix /usr/local && \
 
 # nvidia driver
-ubuntu-drivers devices | grep recommended
+ubuntu-drivers devices | grep recommended && \
 sudo apt install nvidia-driver-440
 ```
 
@@ -37,7 +41,7 @@ sudo apt install nvidia-driver-440
 sudo apt install git vlc curl ffmpegthumbnailer ffmpeg youtube-dl rawtherapee python python3-pip gnome-tweak-tool -y && \
 sudo snap install kubectl --classic && \
 sudo snap install helm --classic && \
-sudo snap install discord --classic
+sudo snap install discord --classic && \
 
 # angular cli
 sudo yarn global add @angular/cli --prefix /usr/local
@@ -45,24 +49,24 @@ sudo yarn global add @angular/cli --prefix /usr/local
 # for reading sd card
 sudo apt-get install exfat-utils exfat-fuse
 
-# gcloud
-echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] http://packages.cloud.google.com/apt cloud-sdk main" | sudo tee -a /etc/apt/sources.list.d/google-cloud-sdk.list
-curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key --keyring /usr/share/keyrings/cloud.google.gpg add -
-sudo apt-get update && sudo apt-get install google-cloud-sdk
+# gcloud https://cloud.google.com/sdk/docs/downloads-apt-get
+echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] https://packages.cloud.google.com/apt cloud-sdk main" | sudo tee -a /etc/apt/sources.list.d/google-cloud-sdk.list && \
+sudo apt-get install apt-transport-https ca-certificates gnupg && \
+curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key --keyring /usr/share/keyrings/cloud.google.gpg add - && \
+sudo apt-get update && sudo apt-get install google-cloud-sdk -y && \
 gcloud init
-gcloud auth configure-docker
 
-snap install obs-studio --classic
-sudo snap install blender --classic
+sudo snap install obs-studio --classic && \
+sudo snap install blender --classic && \
 
 # ckb-next
-sudo add-apt-repository ppa:tatokis/ckb-next
-sudo apt install ckb-next
+sudo add-apt-repository ppa:tatokis/ckb-next && \
+sudo apt install ckb-next -y && \
 
 # veracrypt
-sudo add-apt-repository ppa:unit193/encryption
-sudo apt update
-sudo apt install veracrypt
+sudo add-apt-repository ppa:unit193/encryption && \
+sudo apt update && \
+sudo apt install veracrypt -y && \
 
 # brave browser
 sudo apt install apt-transport-https curl
