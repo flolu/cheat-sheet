@@ -1,110 +1,56 @@
-# 🐧 Ubuntu
+# Ubuntu
 
-## Essential installs
-```
-sudo apt purge snapd && \
-sudo apt install snapd
-```
+## Installs
 
 ```bash
 sudo apt update && \
-sudo apt install curl git gcc nodejs python docker-compose -y && \
 sudo snap install chromium --classic && \
 sudo snap install code --classic && \
+sudo snap install blender --classic && \
+sudo snap install discord --classic && \
+sudo apt install vlc ffmpegthumbnailer ffmpeg youtube-dl rawtherapee -y
 
-# configure docker
-# sudo groupadd docker && \
+# docker
+sudo apt install git docker-compose -y && \
 sudo gpasswd -a $USER docker && \
-newgrp docker && \
+newgrp docker
 
 # configure git user
 git config --global user.email "flo@flolu.com" && \
-git config --global user.name "flolu" && \
+git config --global user.name "flolu"
 
-# yarn
-curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
-echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
-sudo apt update && sudo apt install yarn -y && \
-
-# bazel
-sudo yarn global add @bazel/buildifier --prefix /usr/local && \
-sudo yarn global add @bazel/bazelisk --prefix /usr/local && \
+# node
+sudo apt install nodejs -y && \
+sudo apt install npm -y && \
+mkdir ~/.npm-global && \
+npm config set prefix '~/.npm-global' && \
+export PATH=~/.npm-global/bin:$PATH && \
+source ~/.profile && \
+npm install -g yarn
 
 # nvidia driver
 ubuntu-drivers devices | grep recommended && \
-sudo apt install nvidia-driver-440
+sudo apt install nvidia-driver-450
 ```
 
-## Secondary installs
-
 ```bash
-sudo apt install git vlc curl ffmpegthumbnailer ffmpeg youtube-dl rawtherapee python python3-pip gnome-tweak-tool -y && \
-sudo snap install kubectl --classic && \
-sudo snap install helm --classic && \
-sudo snap install discord --classic && \
-
 # angular cli
 sudo yarn global add @angular/cli --prefix /usr/local
 
 # for reading sd card
 sudo apt-get install exfat-utils exfat-fuse
 
-# gcloud https://cloud.google.com/sdk/docs/downloads-apt-get
-echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] https://packages.cloud.google.com/apt cloud-sdk main" | sudo tee -a /etc/apt/sources.list.d/google-cloud-sdk.list && \
-sudo apt-get install apt-transport-https ca-certificates gnupg && \
-curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key --keyring /usr/share/keyrings/cloud.google.gpg add - && \
-sudo apt-get update && sudo apt-get install google-cloud-sdk -y && \
-gcloud init
-
-sudo snap install obs-studio --classic && \
-sudo snap install blender --classic && \
-
 # ckb-next
 sudo add-apt-repository ppa:tatokis/ckb-next && \
-sudo apt install ckb-next -y && \
+sudo apt install ckb-next -y
 
 # veracrypt
 sudo add-apt-repository ppa:unit193/encryption && \
 sudo apt update && \
-sudo apt install veracrypt -y && \
-
-# brave browser
-sudo apt install apt-transport-https curl
-curl -s https://brave-browser-apt-release.s3.brave.com/brave-core.asc | sudo apt-key --keyring /etc/apt/trusted.gpg.d/brave-browser-release.gpg add -
-echo "deb [arch=amd64] https://brave-browser-apt-release.s3.brave.com/ stable main" | sudo tee /etc/apt/sources.list.d/brave-browser-release.list
-sudo apt install brave-browser
-
-# swipe gestures
-sudo apt-get install git libinput-tools libxdo-dev g++ && \
-git clone https://github.com/Hikari9/comfortable-swipe.git --depth 1 && \
-cd comfortable-swipe && \
-bash install && \
-cd .. && rm -rf comfortable-swipe && \
-sudo gpasswd -a $USER $(ls -l /dev/input/event* | awk '{print $4}' | head --line=1) && \
-sudo reboot
-
-comfortable-swipe autostart
-
-# latex
-sudo apt install texlive-latex-extra
+sudo apt install veracrypt -y
 ```
 
-## Customization
-
-```
-# two monitor setup
-xrandr --output DVI-I-0 --mode 1920x1080 --pos 0x550 --rotate left --output HDMI-0 --primary --mode 3440x1440 --rate 99.98 --pos 1080x0
-```
-
-# 🖼️ Media
-
-## Convert mp4 to gif
-
-```bash
-ffmpeg -t 3 -i input.mp4 -vf "fps=10,scale=320:-1:flags=lanczos,split[s0][s1];[s0]palettegen[p];[s1][p]paletteuse" -loop 0 output.gif
-```
-
-- -t 3 (3 seconds in length)
+# Media
 
 ## Batch compress / resize images
 
@@ -150,14 +96,7 @@ then clear the cache
 rm -rf ~/.cache/thumbnails/*
 ```
 
-# 👨‍💻️ Development
-
-## Clear Docker Resources
-
-```bash
-docker system prune
-docker system prune --volumes
-```
+# Development
 
 ## Stop all Docker containers
 
@@ -165,7 +104,7 @@ docker system prune --volumes
 docker container stop $(docker container ls -aq)
 ```
 
-# 🤪 Misc
+# Misc
 
 ## Print file tree
 
