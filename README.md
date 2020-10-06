@@ -20,13 +20,12 @@ git config --global user.email "flo@flolu.com" && \
 git config --global user.name "flolu"
 
 # node
-sudo apt install nodejs -y && \
-sudo apt install npm -y && \
-mkdir ~/.npm-global && \
-npm config set prefix '~/.npm-global' && \
-cat npm-global.txt >> ~/.profile && \
-source ~/.profile && \
-npm install -g yarn
+sudo apt install nodejs -y
+
+# yarn
+curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+sudo apt update && sudo apt install yarn -y
 
 # nvidia driver
 ubuntu-drivers devices | grep recommended && \
