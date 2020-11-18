@@ -16,7 +16,7 @@ sudo gpasswd -a $USER docker && \
 newgrp docker
 
 # configure git user
-git config --global user.email "flo@flolu.com" && \
+git config --global user.email "loflude@gmail.com" && \
 git config --global user.name "flolu"
 
 # node
