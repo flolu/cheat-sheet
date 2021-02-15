@@ -8,10 +8,11 @@ sudo snap install blender --classic && \
 sudo snap install discord --classic && \
 sudo snap install telegram-desktop --classic && \
 sudo snap install node --classic && \
-sudo apt install git ffmpegthumbnailer ffmpeg youtube-dl rawtherapee terminator mpv -y
+sudo snap install gimp && \
+sudo apt install git ffmpegthumbnailer ffmpeg youtube-dl rawtherapee terminator mpv python -y
 
 # docker
-sudo apt install git docker-compose -y && \
+sudo apt install docker-compose -y && \
 sudo gpasswd -a $USER docker && \
 newgrp docker
 
