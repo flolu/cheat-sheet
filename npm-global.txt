@@ -1,4 +1,0 @@
-
-
-# npm global dependencies
-export PATH=~/.npm-global/bin:$PATH
