@@ -33,7 +33,7 @@ sudo apt install nvidia-driver-460
 
 ```bash
 # xournal
-sudo apt install xournal
+sudo snap install xournalpp
 
 # angular cli
 sudo yarn global add @angular/cli --prefix /usr/local
